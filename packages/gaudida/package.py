@@ -4,21 +4,7 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 # ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install gaudida
-#
-# You can edit this file again by typing:
-#
-#     spack edit gaudida
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
+
 
 from spack import *
 
@@ -30,10 +16,11 @@ class Gaudida(CMakePackage):
 
     homepage = "https://gaudi.web.cern.ch/gaudi/"
     git      = "https://gitlab.cern.ch/gaudi/Gaudi.git"
-    url      = "https://gitlab.cern.ch/gaudi/Gaudi/-/archive/master/Gaudi-master.tar.gz"
+    url      = "https://gitlab.cern.ch/gaudi/Gaudi/-/archive/v36r5/Gaudi-v36r5.tar.gz"
 
     maintainers = ['imjelde']
 
+    version('36.5',     sha256='593e0316118411a5c5fde5d4d87cbfc3d2bb748a8c72a66f4025498fcbdb0f7e')
     version('36.4',     sha256='1a5c27cdc21ec136b47f5805406c92268163393c821107a24dbb47bd88e4b97d')
     version('add-backwardscomp', branch='add-v21-v22-api-options')
 

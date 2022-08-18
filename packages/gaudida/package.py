@@ -31,7 +31,7 @@ class Gaudida(CMakePackage):
     depends_on('uuid')
     depends_on('tbb@2019.0.11007.2:')
     depends_on('zlib@1.2.11:')
-    depends_on('range-v3')
+    depends_on('range-v3 cxxstd=17')
     depends_on('cppgsl')
     depends_on('fmt')
     depends_on('nlohmann-json')
@@ -71,3 +71,9 @@ class Gaudida(CMakePackage):
             self.define_from_variant('GAUDI_USE_JEMALLOC', 'optional')
         ]
         return args
+
+        def url_for_version(self, version):
+                major = str(version[0])
+                minor = str(version[1])
+                url = "https://gitlab.cern.ch/gaudi/Gaudi/-/archive/v{0}r{1}/Gaudi-v{0}r{1}.tar.gz".format(major, minor)
+                return url

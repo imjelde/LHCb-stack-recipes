@@ -13,11 +13,13 @@ class Detector(CMakePackage):
 
     homepage = "https://gitlab.cern.ch/lhcb/Detector"
     git      = "https://gitlab.cern.ch/lhcb/Detector"
-    url      = "https://gitlab.cern.ch/lhcb/Detector/-/archive/master/Detector-master.tar.gz"
+    url      = "https://gitlab.cern.ch/lhcb/Detector/-/archive/v1r2/Detector-v1r2.tar.gz"
 
     maintainers = ['imjelde']
 
     version('master', branch='master')
+    version('1r2', sha256='388192b573d9d8e10431730df7dabead3591432b64784d210b67ea0963039bd3')
+    version('1r1', sha256='b96b25f0289fc0a8bf3f7d3c9da6a5aebc62aa51890662717f6a710fec38ca83')
 
     depends_on('gitconddb@0.2.0:')
     depends_on('nlohmann-json')

@@ -25,7 +25,7 @@ class Gaudida(CMakePackage):
     version('add-backwardscomp', branch='add-v21-v22-api-options')
 
     # Mandatory minimum build
-    depends_on('boost@1.70: +python')
+    depends_on('boost@1.70: +system +filesystem +regex +thread +python +test +program_options +log +graph')
     depends_on('python@3:')
     depends_on('root@6.18: cxxstd=17 +root7')
     depends_on('uuid')

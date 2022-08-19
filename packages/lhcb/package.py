@@ -31,7 +31,7 @@ class Lhcb(CMakePackage):
     depends_on('gaudida +optional')
     depends_on('detector')
     depends_on('aida')
-    depends_on('boost@1.77: +container')
+    depends_on('boost@1.77: +date_time +container +iostreams +serialization +thread')
     depends_on('clhep')
     depends_on('cppgsl')
     depends_on('eigen@3')

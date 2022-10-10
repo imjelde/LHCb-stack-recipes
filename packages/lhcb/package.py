@@ -21,9 +21,9 @@ class Lhcb(CMakePackage):
 
     version('master', branch='master')
     version('commit1204', commit='294e780ad2c122b74999e34dd78baab30081b44d')
-    version('53r9',   sha256='997c14636e604570135408807165209ede635a170b2107f8fe7053754619a9fa')
-    version('53r8p1', sha256='9e21c75fbeaa7470f40b1933ae74ec7df569a31160ee6bd843089d9964c7c6ec')
-    version('53r6',   sha256='5c846c5f5f162d169718522db891b5cdd1e68171e3a69688c6afd9fb7397cb4e')
+    version('53.9',   sha256='997c14636e604570135408807165209ede635a170b2107f8fe7053754619a9fa')
+    version('53.8.1', sha256='9e21c75fbeaa7470f40b1933ae74ec7df569a31160ee6bd843089d9964c7c6ec')
+    version('53.6',   sha256='5c846c5f5f162d169718522db891b5cdd1e68171e3a69688c6afd9fb7397cb4e')
 
     variant('test', default=True,
         description='Include tests')
@@ -62,3 +62,10 @@ class Lhcb(CMakePackage):
             self.define_from_variant('BUILD_TESTING', 'test')
         ]
         return args
+
+    def url_for_version(self, version):
+            major = str(version[0])
+            minor = str(version[1])
+            patch = str(version[2])
+            url = "https://gitlab.cern.ch/lhcb/LHCb/-/archive/v{0}r{1}p{2}/LHCb-v{0}r{1}p{2}.tar.gz".format(major, minor, patch)
+            return url

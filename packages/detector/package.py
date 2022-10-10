@@ -18,8 +18,8 @@ class Detector(CMakePackage):
     maintainers = ['imjelde']
 
     version('master', branch='master')
-    version('1r2', sha256='388192b573d9d8e10431730df7dabead3591432b64784d210b67ea0963039bd3')
-    version('1r1', sha256='b96b25f0289fc0a8bf3f7d3c9da6a5aebc62aa51890662717f6a710fec38ca83')
+    version('1.2', sha256='388192b573d9d8e10431730df7dabead3591432b64784d210b67ea0963039bd3')
+    version('1.1', sha256='b96b25f0289fc0a8bf3f7d3c9da6a5aebc62aa51890662717f6a710fec38ca83')
 
     depends_on('gitconddb@0.2.0:')
     depends_on('nlohmann-json')
@@ -31,3 +31,9 @@ class Detector(CMakePackage):
     depends_on('vc')
     depends_on('dd4hep')
     depends_on('openssl')
+
+    def url_for_version(self, version):
+            major = str(version[0])
+            minor = str(version[1])
+            url = "https://gitlab.cern.ch/lhcb/Detector/-/archive/v{0}r{1}/Detector-v{0}r{1}.tar.gz".format(major, minor)
+            return url
